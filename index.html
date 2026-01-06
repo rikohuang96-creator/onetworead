@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author - Illustrator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Loved+by+the+King&family=Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Architects Daughter', cursive;
+            background: linear-gradient(135deg, #fdfbf7 0%, #f8f6f0 100%);
+            color: #1a1a1a;
+            line-height: 1.6;
+            font-size: 18px;
+            letter-spacing: 0.3px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F5 100%);
+            padding: 25px 40px;
+            border-bottom: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-divider {
+            text-align: center;
+            margin: 15px 0 0 0;
+            font-size: 1.2em;
+            letter-spacing: 10px;
+            color: #FF1493;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .logo {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 2.8em;
+            font-weight: bold;
+            color: #00CED1;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1.1em;
+            color: #FF6347;
+            margin-top: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 35px;
+            margin-top: 20px;
+        }
+
+        nav a {
+            font-family: 'Architects Daughter', cursive;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 1.3em;
+            transition: color 0.3s;
+            font-weight: bold;
+        }
+
+        nav a:nth-child(1) {
+            color: #FF1493;
+        }
+
+        nav a:nth-child(2) {
+            color: #9370DB;
+        }
+
+        nav a:nth-child(3) {
+            color: #FF1493;
+        }
+
+        nav a:nth-child(4) {
+            color: #9370DB;
+        }
+
+        nav a:hover {
+            color: #FF6347;
+        }
+
+        .social-header {
+            display: none;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 40px;
+        }
+
+        .intro {
+            background: #f5f5f5;
+            padding: 45px;
+            margin-bottom: 60px;
+            border-left: none;
+        }
+
+        .intro h1 {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #FF1493;
+        }
+
+        .intro p {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            letter-spacing: 0.3px;
+        }
+
+        .intro a {
+            color: #9370DB;
+            font-weight: bold;
+        }
+
+        .featured-image {
+            width: 100%;
+            max-width: 300px;
+            margin: 30px auto;
+            display: block;
+        }
+
+        article {
+            margin-bottom: 80px;
+            padding-bottom: 40px;
+            border-bottom: none;
+        }
+
+        .article-divider {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.2em;
+            letter-spacing: 10px;
+            color: #FF1493;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        article h2 {
+            font-family: 'Architects Daughter', cursive;
+            font-size: 2.5em;
+            margin-bottom: 25px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            color: #FF6347;
+        }
+
+        article h2 a {
+            color: #FF6347;
+            text-decoration: none;
+        }
+
+        article h2 a:hover {
+            color: #FF1493;
+        }
+
+        article img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        article p {
+            font-family: 'Architects Daughter', cursive;
+            margin-bottom: 18px;
+            font-size: 1.05em;
+            line-height: 1.7;
+            color: #1a1a1a;
+            letter-spacing: 0.3px;
+        }
+
+        article strong {
+            font-weight: bold;
+            color: #9370DB;
+        }
+
+        blockquote {
+            font-family: 'Architects Daughter', cursive;
+            border-left: 3px solid #FF6347;
+            padding-left: 25px;
+            margin: 25px 0;
+            font-style: italic;
+            color: #FF6347;
+            font-size: 1.1em;
+        }
+
+        .pagination {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin: 60px 0;
+        }
+
+        .pagination a {
+            font-family: 'Architects Daughter', cursive;
+            padding: 10px 15px;
+            background: #f5f5f5;
+            color: #1a1a1a;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            font-size: 1.1em;
+        }
+
+        .pagination a:hover,
+        .pagination a.active {
+            background: #FF1493;
+            color: #fff;
+            border-color: #FF1493;
+        }
+
+        aside {
+            display: none;
+        }
+
+        footer {
+            font-family: 'Architects Daughter', cursive;
+            background: #f5f5f5;
+            padding: 40px;
+            text-align: center;
+            margin-top: 80px;
+            border-top: none;
+            font-size: 1em;
+            color: #1a1a1a;
+        }
+
+        .footer-divider {
+            text-align: center;
+            margin: 0 0 20px 0;
+            font-size: 1.2em;
+            letter-spacing: 10px;
+            color: #FF1493;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .search-form {
+            margin: 20px 0;
+        }
+
+        .search-form input {
+            font-family: 'Architects Daughter', cursive;
+            padding: 12px;
+            border: 2px solid #9370DB;
+            font-size: 1em;
+            width: 300px;
+        }
+
+        .search-form button {
+            font-family: 'Architects Daughter', cursive;
+            padding: 12px 25px;
+            background: #FF1493;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px 15px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 20px;
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 1.1em;
+            }
+
+            .container {
+                padding: 0 20px;
+                margin: 40px auto;
+            }
+
+            .intro {
+                padding: 30px 25px;
+            }
+
+            article {
+                padding: 0 15px;
+            }
+
+            .logo {
+                font-size: 2em;
+            }
+
+            .tagline {
+                font-size: 1em;
+            }
+
+            article h2 {
+                font-size: 1.8em;
+            }
+
+            body {
+                font-size: 16px;
+            }
+
+            .intro p, article p {
+                font-size: 1em;
+            }
+
+            .pagination a {
+                padding: 8px 12px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <a href="#" class="logo">Ellie Qin</a>
+            <div class="tagline">author – illustrator</div>
+        </div>
+        <nav>
+            <a href="#">Poem</a>
+            <a href="#">Drawing</a>
+            <a href="#">Joke</a>
+            <a href="#">Shop</a>
+        </nav>
+        <div class="header-divider">✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿</div>
+    </header>
+
+    <div class="container">
+        <div class="intro">
+            <h1>Hello!</h1>
+            <p>
+                I'm an author and illustrator. I have published many picture books and graphic novels for kids, both in English and in other languages. I also love to illustrate free printables for parents and teachers: my goal is to promote diversity, tolerance, respect and empathy. You can find my books, free printables and other cool things in my <a href="#">Shop.</a>
+            </p>
+            <img src="https://via.placeholder.com/300x200/f5f5f5/000000?text=Featured+Work" alt="Featured work" class="featured-image">
+        </div>
+
+        <article>
+            <h2><a href="#">How to raise a child who is mindful of social justice?</a></h2>
+            <img src="https://via.placeholder.com/800x400/f5f5f5/000000?text=Article+Image" alt="Article image">
+            <p>
+                Introducing social justice to kids without overwhelming and depressing them can seem like a tricky task, but it's crucial in today's world. We want to nurture a sense of empathy and fairness without burdening young minds with heavy narratives.
+            </p>
+            <p>
+                <strong>1- Foster Open Conversations</strong><br>
+                Have ongoing age-appropriate discussions about issues like racism, sexism, poverty, and other forms of discrimination and inequality.
+            </p>
+            <p>
+                <strong>2- Expose Them to Diversity</strong><br>
+                Befriend people from diverse backgrounds and expose your children to different cultures through books, movies, museums, etc.
+            </p>
+            <p>
+                <strong>3- Lead by Example</strong><br>
+                Model inclusive behavior, speak up against injustice, and get involved in causes that promote equality and human rights.
+            </p>
+            <div class="article-divider">✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿</div>
+        </article>
+
+        <article>
+            <h2><a href="#">My new book: A Creative Project</a></h2>
+            <img src="https://via.placeholder.com/600x400/f5f5f5/000000?text=Book+Cover" alt="Book cover">
+            <p>
+                Throughout my career as a cartoonist, author and artist, I've been fascinated with unique perspectives and storytelling. This latest work explores themes that matter to young readers.
+            </p>
+            <blockquote>
+                "A wonderful exploration of important topics through engaging illustrations and accessible text." - Review excerpt
+            </blockquote>
+            <p>
+                The book features signature illustrations and an approach that makes complex ideas easy to understand for children while still being engaging for adults.
+            </p>
+            <div class="article-divider">✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿</div>
+        </article>
+
+        <article>
+            <h2><a href="#">Free Printable: Understanding Emotions</a></h2>
+            <p>
+                Here's a free printable I made to explain to children an important concept about emotional wellbeing.
+            </p>
+            <p>
+                Teachers and parents, you can download it here and print it for school or home use (no commercial uses allowed).
+            </p>
+            <img src="https://via.placeholder.com/600x800/f5f5f5/000000?text=Free+Printable" alt="Free printable">
+            <p>
+                For more free printable posters, visit my shop in the "free printable stuff" section. To see my books, click here. If you want to license this image, contact my agent.
+            </p>
+            <div class="article-divider">✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿</div>
+        </article>
+
+        <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">next ›</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-divider">✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿</div>
+        <p>&copy; 2024 Author Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
