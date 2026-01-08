@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Poems - Ellie Qin</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawings - Ellie Qin</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Loved+by+the+King&family=Waiting+for+the+Sunrise&display=swap" rel="stylesheet">
 
@@ -22,9 +22,20 @@
     header {
       background: linear-gradient(135deg, #FFE5E5 0%, #FFF0F5 100%);
       padding: 25px 40px;
+      border-bottom: none;
       display: flex;
       flex-direction: column;
       align-items: center;
+    }
+
+    .header-divider {
+      text-align: center;
+      margin: 15px 0 0 0;
+      font-size: 1.2em;
+      letter-spacing: 10px;
+      color: #FF1493;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     .logo {
@@ -42,7 +53,6 @@
       color: #FF6347;
       margin-top: 8px;
       letter-spacing: 0.5px;
-      text-align: center;
     }
 
     nav {
@@ -62,96 +72,91 @@
       font-weight: bold;
     }
 
-    /* highlight Poem */
     nav a:nth-child(1) { color: #FF1493; }
+    nav a:nth-child(2) { color: #9370DB; }
+    nav a:nth-child(3) { color: #FF1493; }
+    nav a:nth-child(4) { color: #9370DB; }
 
     nav a:hover { color: #FF6347; }
 
-    .header-divider {
-      text-align: center;
-      margin: 15px 0 0 0;
-      font-size: 1.2em;
-      letter-spacing: 10px;
-      color: #FF1493;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-
+    /* page container */
     .container {
       max-width: 1000px;
       margin: 60px auto;
       padding: 0 40px;
     }
 
-    .page-title {
+    /* title block */
+    .intro {
       background: #f5f5f5;
-      padding: 35px;
+      padding: 45px;
       margin-bottom: 30px;
+      border-left: none;
     }
 
-    .page-title h1 {
-      font-size: 2em;
-      color: #FF1493;
-      margin-bottom: 10px;
+    .intro h1 {
+      font-size: 1.8em;
+      margin-bottom: 12px;
       font-weight: bold;
-    }
-
-    .page-title p {
-      font-size: 1.05em;
-    }
-
-    .poem-list {
-      display: grid;
-      gap: 20px;
-    }
-
-    .poem-card {
-      background: #ffffff;
-      border: 2px solid #f1e9f2;
-      padding: 22px;
-    }
-
-    .poem-meta {
-      font-size: 0.95em;
-      color: #9370DB;
-      margin-bottom: 8px;
-      font-weight: bold;
-    }
-
-    .poem-title {
-      font-size: 1.6em;
-      margin-bottom: 10px;
-      color: #FF6347;
-      font-weight: bold;
-    }
-
-    .poem-title a {
-      color: #FF6347;
-      text-decoration: none;
-    }
-
-    .poem-title a:hover {
       color: #FF1493;
     }
 
-    .poem-preview {
-      font-size: 1.05em;
+    .intro p {
+      font-size: 1.1em;
+      line-height: 1.7;
       color: #1a1a1a;
     }
 
-    .back-home {
-      display: inline-block;
-      margin-top: 30px;
-      text-decoration: none;
+    /* gallery */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: #f5f5f5;
+      padding: 16px;
+      border-radius: 18px;
+    }
+
+    .art-text {
+      margin-bottom: 12px;
+    }
+
+    .art-title {
+      font-size: 1.3em;
       font-weight: bold;
       color: #9370DB;
     }
 
+    .art-desc {
+      margin-top: 6px;
+      font-size: 1.05em;
+    }
+
+    .art-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      margin-top: 10px;
+    }
+
+    .caption {
+      margin-top: 10px;
+      font-size: 1em;
+      opacity: 0.9;
+    }
+
     footer {
+      font-family: 'Architects Daughter', cursive;
       background: #f5f5f5;
       padding: 40px;
       text-align: center;
       margin-top: 80px;
+      border-top: none;
       font-size: 1em;
       color: #1a1a1a;
     }
@@ -168,11 +173,13 @@
 
     @media (max-width: 768px) {
       header { padding: 20px 15px; }
-      .container { padding: 0 20px; margin: 40px auto; }
+      nav { gap: 20px; }
       nav a { font-size: 1.1em; }
+      .container { padding: 0 20px; margin: 40px auto; }
+      .intro { padding: 30px 25px; }
       .logo { font-size: 2em; }
+      .tagline { font-size: 1em; }
       body { font-size: 16px; }
-      .poem-title { font-size: 1.4em; }
     }
   </style>
 </head>
@@ -186,7 +193,7 @@
 
     <nav>
       <a href="poems.html">Poem</a>
-      <a href="#">Drawing</a>
+      <a href="drawings.html">Drawing</a>
       <a href="#">Joke</a>
       <a href="#">Shop</a>
     </nav>
@@ -195,34 +202,39 @@
   </header>
 
   <div class="container">
-    <div class="page-title">
-      <h1>Poems</h1>
-      <p>Newest first ✨ Click a title to read.</p>
+    <div class="intro">
+      <h1>Drawings</h1>
+      <p>Welcome to my art gallery! Some drawings have a little story above the picture.</p>
     </div>
 
-    <div class="poem-list">
-      <!-- NEWEST POEM GOES ON TOP -->
-      <div class="poem-card">
-  <div class="poem-meta">Uploaded: 2026-01-07</div>
-  <div class="poem-title"><a href="poemryhm.html">The Rhyme</a></div>
-  <div class="poem-preview">I do not want this to rhyme…</div>
-</div>
+    <div class="grid">
 
-      <div class="poem-card">
-        <div class="poem-meta">Uploaded: 2026-01-06</div>
-        <div class="poem-title"><a href="poemsteak.html">Yummy Steak</a></div>
-        <div class="poem-preview">How do you eat your steak?…</div>
+      <!-- CARD 1: text above picture -->
+      <div class="card">
+        <div class="art-text">
+          <div class="art-title">My First Drawing</div>
+          <div class="art-desc">Write a short description here (optional).</div>
+        </div>
+
+        <img class="art-img" src="images/REPLACE_WITH_YOUR_IMAGE_FILENAME" alt="Describe this drawing">
+
+        <div class="caption">Optional caption (watercolor / pencil / date)</div>
       </div>
 
-      <!-- When you add more poems later, copy a poem-card and paste ABOVE this line -->
-    </div>
+      <!-- CARD 2: picture only (optional) -->
+      <!--
+      <div class="card">
+        <img class="art-img" src="images/another-image.png" alt="Describe this drawing">
+        <div class="caption">Optional caption</div>
+      </div>
+      -->
 
-    <a class="back-home" href="index.html">← Back to Home</a>
+    </div>
   </div>
 
   <footer>
     <div class="footer-divider">✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿ ─ ✿</div>
-    <p>&copy; 2026 Ellie Qin. All rights reserved.</p>
+    <p>&copy; 2024 Ellie Qin. All rights reserved.</p>
   </footer>
 </body>
 </html>
